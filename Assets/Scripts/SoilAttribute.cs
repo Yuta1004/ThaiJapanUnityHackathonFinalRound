@@ -8,13 +8,6 @@ public class SoilAttribute : MonoBehaviour{
     public int pollutionLevel;
     public int treeGrowth;
 
-    /// <summary>
-    /// treeGrowthとMaterialの関係
-    ///     ~ 20 
-    ///  21 ~ 50
-    ///  51 ~ 80
-    ///  81 ~ 
-    /// </summary>
     private void Start(){
         //init attribute
         isTree = false;

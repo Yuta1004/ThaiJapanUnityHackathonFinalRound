@@ -213,11 +213,6 @@ MonoBehaviour:
   isTree: 0
   pollutionLevel: 0
   treeGrowth: 0
-  soilMaterials:
-  - {fileID: 2100000, guid: b13f5abb70e6f4cae932f8c54e821625, type: 2}
-  - {fileID: 2100000, guid: ccbeb7d4454a145d294e39ffc5f33448, type: 2}
-  - {fileID: 2100000, guid: 95f330ae0f16346bdacae9fac1963143, type: 2}
-  - {fileID: 2100000, guid: 37e3966d289aa4148b06019c3ae7cdf2, type: 2}
 --- !u!1 &142182876
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,7 +458,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &644837274
 Transform:
   m_ObjectHideFlags: 0
@@ -660,6 +655,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soil: {fileID: 14534504}
   landLength: 15
+  soilMaterials:
+  - {fileID: 2100000, guid: b13f5abb70e6f4cae932f8c54e821625, type: 2}
+  - {fileID: 2100000, guid: ccbeb7d4454a145d294e39ffc5f33448, type: 2}
+  - {fileID: 2100000, guid: c9b432ef4627d43aa906c4d95dafaa24, type: 2}
+  - {fileID: 2100000, guid: 95f330ae0f16346bdacae9fac1963143, type: 2}
+  - {fileID: 2100000, guid: 37e3966d289aa4148b06019c3ae7cdf2, type: 2}
 --- !u!1 &1141738482
 GameObject:
   m_ObjectHideFlags: 0
