@@ -8,6 +8,7 @@ public class MakeLand : MonoBehaviour {
     public GameObject initGameObject;
     public int landLength;
     public Material[] soilMaterials;
+    public GameObject[] trees;
     /// <summary>
     /// treeGrowthとMaterialの関係
     ///     ~ 20  
@@ -19,11 +20,15 @@ public class MakeLand : MonoBehaviour {
 
     private Vector3 InitPosition;
     private GameObject[] Soils;
+    private GameObject[] treeonsoil;
     private SoilAttribute[] SoilAttributes;
+    private int[] randomInt;
 
 	void Start () {
         InitPosition = initGameObject.transform.position;
         Soils = new GameObject[landLength * landLength];
+        treeonsoil = new GameObject[5];
+        randomInt = new int[5];
         for (int i = 0; i < landLength*landLength; i++){
             InitPosition = new Vector3(initGameObject.transform.position.x + (i % landLength) * 3,
                                       0,
@@ -31,9 +36,14 @@ public class MakeLand : MonoBehaviour {
             Soils[i] = Instantiate(soil,
                                    InitPosition,
                                    initGameObject.transform.rotation);
+            Soils[i].transform.parent = this.gameObject.transform;
             Soils[i].AddComponent<SoilAttribute>();
             Soils[i].GetComponent<SoilAttribute>().init();
             UpdateMaterial(i);
+        }
+        for (int i = 0; i < 5; i++){
+            randomInt[i] = Random.Range(50, 150);
+            treeonsoil[i] = setTree(randomInt[i]);
         }
         StartCoroutine(PollutionSoil());
 	}
@@ -66,4 +76,13 @@ public class MakeLand : MonoBehaviour {
             Soils[index].GetComponent<Renderer>().material = soilMaterials[4];
         }
 	}
+
+    //木を植える
+    GameObject setTree(int index){
+        
+        Soils[index].GetComponent<SoilAttribute>().PlantTree();
+        GameObject tree = Instantiate(trees[0], trees[0].transform);
+        tree.transform.parent = Soils[index].transform;
+        return tree;
+    }
 }
