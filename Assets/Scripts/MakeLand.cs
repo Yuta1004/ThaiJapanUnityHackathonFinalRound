@@ -18,6 +18,7 @@ public class MakeLand : MonoBehaviour {
 
     private Vector3 InitPosition;
     private GameObject[] Soils;
+    private SoilAttribute[] SoilAttributes;
 	void Start () {
         InitPosition = this.transform.position;
         Soils = new GameObject[landLength * landLength];
@@ -26,13 +27,29 @@ public class MakeLand : MonoBehaviour {
                                       0,
                                        this.transform.position.z - (i / landLength) * 3);
             Soils[i] = Instantiate(soil,
-                        InitPosition,
-                        this.transform.rotation);
+                                   InitPosition,
+                                   this.transform.rotation);
+            Soils[i].AddComponent<SoilAttribute>();
+            Soils[i].GetComponent<SoilAttribute>().init();
+            UpdateMaterial(i);
         }
 	}
 	
-	// Update is called once per frame
-	void UpdateMa () {
-		
+	//マテリアルの変更
+	void UpdateMaterial (int index) {
+        int pollitionLevel;
+        pollitionLevel = Soils[index].GetComponent<SoilAttribute>().pollutionLevel;
+        Debug.Log(pollitionLevel);
+        if(pollitionLevel <= 20){
+            Soils[index].GetComponent<Renderer>().material = soilMaterials[0];
+        }else if(pollitionLevel <= 50){
+            Soils[index].GetComponent<Renderer>().material = soilMaterials[1];
+        }else if(pollitionLevel <= 80){
+            Soils[index].GetComponent<Renderer>().material = soilMaterials[2];
+        }else if(pollitionLevel <= 99){
+            Soils[index].GetComponent<Renderer>().material = soilMaterials[3];
+        }else{
+            Soils[index].GetComponent<Renderer>().material = soilMaterials[4];
+        }
 	}
 }
