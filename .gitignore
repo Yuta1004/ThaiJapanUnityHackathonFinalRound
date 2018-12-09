@@ -39,3 +39,4 @@ sysinfo.txt
 
 # Plugin
 /Assets/Plugins*
+/Assets/Plugins.meta
