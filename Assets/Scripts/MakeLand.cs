@@ -10,6 +10,7 @@ public class MakeLand : MonoBehaviour {
     public Material[] soilMaterials;
     public GameObject[] trees;
     public int totelSetTree;
+    public float waveTime;
     /// <summary>
     /// treeGrowthとMaterialの関係
     ///     ~ 20  
@@ -61,13 +62,14 @@ public class MakeLand : MonoBehaviour {
             }
             treeOnSoil[RandomInt[i]] = setTree(RandomInt[i]);
         }
+        //汚染開始！！
         StartCoroutine(PollutionSoil());
 	}
 
     IEnumerator PollutionSoil(){
         
         while (true){
-            yield return new WaitForSeconds(7.5f);
+            yield return new WaitForSeconds(waveTime);
             for (int i = 0; i < landLength * landLength; i++){
                 Soils[i].GetComponent<SoilAttribute>().PollutionErosion(10);
                 UpdateMaterial(i);
