@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scenes/help.unity.meta
 guid: 767105c0bfe524df7904fcb32f5685db
+=======
+guid: 399630b852cfc435dbc25a7111788d96
+folderAsset: yes
+>>>>>>> bf7a7ebb2cde0adff8694a2ea28651b6c36cde13:Assets/Scripts.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
