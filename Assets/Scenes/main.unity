@@ -683,7 +683,7 @@ GameObject:
   - component: {fileID: 1161860930}
   - component: {fileID: 1161860929}
   m_Layer: 0
-  m_Name: CanNotPurifySoil (2)
+  m_Name: CanNotPurifySoil3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
