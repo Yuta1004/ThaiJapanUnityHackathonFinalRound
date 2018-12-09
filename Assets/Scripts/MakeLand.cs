@@ -55,7 +55,7 @@ public class MakeLand : MonoBehaviour {
                 Soils[i].GetComponent<SoilAttribute>().PollutionErosion(10);
                 UpdateMaterial(i);
             }
-            Debug.Log(Soils[1].GetComponent<SoilAttribute>().pollutionLevel);
+            //Debug.Log(Soils[1].GetComponent<SoilAttribute>().pollutionLevel);
         }
     }
 	
@@ -81,8 +81,11 @@ public class MakeLand : MonoBehaviour {
     GameObject setTree(int index){
         
         Soils[index].GetComponent<SoilAttribute>().PlantTree();
-        GameObject tree = Instantiate(trees[0], trees[0].transform);
+        GameObject tree = Instantiate(trees[0], 
+                                      Soils[index].transform.position, 
+                                      Soils[index].transform.rotation);
         tree.transform.parent = Soils[index].transform;
+        Debug.Log(tree.transform.position);
         return tree;
     }
 }
