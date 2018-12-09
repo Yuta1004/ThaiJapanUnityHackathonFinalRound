@@ -1,125 +1,37 @@
--------------------------
-Fantasy Skybox FREE 1.4.0
--------------------------
+ÔªøNobody reads a ‚Äúreadme‚Äù for skyboxes, so I might as well make this my artist statement.
 
-	This package is free version of Fantasy Skybox. It contains 4 low-quality textures, materials, demo scene and sample scripts.
 
-	Features:
+Artist Statement:
 
-		ï Contains 4 low-quality skyboxes.
-		ï Contains day and night skyboxes.
-		ï Contains demo scene.
-		ï Contains Fog and Ambient guide for each skybox.
-		ï Desktop and Mobile friendly.
-		ï Support all build player platforms.
-		
-	Requirements:
 
-		ï Demo scene requires Characters package of Standard Assets, See 'How to use demo scene?' section below.
-		
-	Compatible:
+These four skyboxes are my first in a series of artistic game assets reflecting my vision of a game world. I‚Äôm an old-school oil painter and a card-carrying nerd. A gamer since the glory days of the Atari 2600, I have recurring dreams of being a character in my own video game. I‚Äôm currently developing the art style for an urban fantasy world. The goal is to produce beautiful and efficient assets that work for a wide range of game genres. If you enjoy these skyboxes, please rate it and leave a comment. Tell me what works, what doesn't and what you‚Äôd like to see more of.
 
-		ï Unity 2017.3.1 or higher.
 
-	Unity Asset Store:
-		
-		Fantasy Skybox
-		https://www.assetstore.unity3d.com/en/#!/content/18216
-		https://assetstore.unity.com/packages/2d/textures-materials/sky/fantasy-skybox-18216
-	
-		Fantasy Skybox FREE
-		https://www.assetstore.unity3d.com/en/#!/content/18353
-		https://assetstore.unity.com/packages/2d/textures-materials/sky/fantasy-skybox-free-18353
+Newdawn: Good for an ending or cutscene, very painterly. I decided to leave it very sketchy. Open. A new beginning. 
 
-	YouTube:
 
-		Demo, https://youtu.be/FI6HHl_GtEU
+Doomsday: Good for a Silent Hill type suspense, horror, moody af, this sky was featured in my 2014 oil painting The Hermit.
 
-		Tutorial, https://youtu.be/CZwStQ_VbN4
 
-	Facebook Page:
+Urbanlight: There is nothing like that New York City light pollution blotting out all but The One Star in Sight.
 
-		https://www.facebook.com/GETeamPage/
-		
-	Thank you for your support,
 
-	Gold Experience Team
-	Webpage: https://www.facebook.com/GETeamPage/
-	Support E-mail: geteamdev@gmail.com
+Nostalgia: If you know the 16-bit title that inspired this sky, leave a comment. 
 
--------------
-How to use demo scene?
--------------
 
-	Due to possible compatibility issues between Unity versions, Characters package of Standard Assets is no longer included. Users have to import it into Unity Editor before using the demo scene. Please follow these steps.
 
-	1) Main Menu, click Assets menu.
-	2) Click Import Package.
-	3) Click Characters, the Import Unity Package dialog appears.
-	4) All Checkboxes should be on, click Import button.
-	5) In Project tab, open demo scene file found in 'Fantasy Skybox FREE' folder.
-	6) Press Play button.
-	7) Use mouse to look around, press left/right arrow key to change skybox.
-	8) Press Escape key to release mouse from Game tab.
 
--------------
-Release notes
--------------
+If you read this far, thank you for your time. Now go make a game!
 
-	Version 1.4.0
-	
-		ï 'GE Touch Joystick' is removed from 'GE Common Assets' folder.
-		ï Updated demo scene.
-		ï Characters package of Standard Assets is no longer included. Users have to import it into Unity Editor before using the demo scene (see details in Readme.txt file).
-		ï Unity 2017.3.1 or higher compatible.
 
-	Version 1.3.8
+Sincerely,
 
-		ï Updated Skybox's parameters.
-		ï Updated demo scene.
-		ï Unity 5.6.1 or higher compatible.
 
-	Version 1.3.5
+Luiz A. A. Teles
 
-		ï Updated GUI Animator FREE to version 1.1.5.
-		ï Unity 5.5.1 or higher compatible.
 
-	Version 1.3.0
+Fine Artist and Founder of Babycake Studio
 
-		ï Fixed; Requested build target group doesn't exist in PlayerSettings validation.
-		ï Updated GUI Animator FREE to version 1.1.0.
-		ï Unity 5.4.0 or higher compatible.
 
-	Version 1.2.6
-
-		ï Updated GUI Animator FREE to version 1.0.1.
-		ï Unity 4.7.1 or higher compatible.
-		ï Unity 5.3.4 or higher compatible.
-
-	Version 1.2.5
-	
-		ï Added; Full Screen toggle button.
-		ï Added; Settings button and details panels.
-		ï Changed; texture files now use jpg instead of tga.
-		ï Fixed; GUID conflict with other packages.
-		ï Improved; first person player controller.
-		ï Updated; sample scripts.
-		ï Updated; Demo scene.
-		ï Unity 4.6.9 or higher compatible.
-		ï Unity 5.3.2 or higher compatible.
-
-	Version 1.0.1
-
-		ï Changed; package's name to Fantasy Skybox FREE.
-		ï Added; 2 skyboxes; Night 01B and Sunny 01B.
-		ï Rearranged; folders.
-		ï Changed; texture format to True color.
-
-	Version 1.0 (Initial version)
-
-		ï Contains two skyboxes, Night 01A and Sunny 01A.
-		ï Contains demo scene and scripts.
-		ï Contains Light & Render parameters guide for each skybox.
-		ï Mobile friendly.
-		ï Supports all player platforms.
-		ï Unity and Unity Pro compatible.
+For updates on upcoming skies and other assets, visit us at luiztelesfineart.wordpress.com
+For tech support, you may contact me at luxmaximus@gmail.com
