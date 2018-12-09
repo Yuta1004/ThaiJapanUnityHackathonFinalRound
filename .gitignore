@@ -36,3 +36,6 @@ sysinfo.txt
 # JetBrains
 /.idea*
 /Assets/Plugins/Editor*
+
+# Plugin
+/Assets/Plugins*
