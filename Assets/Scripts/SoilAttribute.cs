@@ -21,6 +21,6 @@ public class SoilAttribute : MonoBehaviour{
     }
 
     public void PollutionErosion(int degreeOfErosion){
-        pollutionLevel = Mathf.Max(degreeOfErosion+pollutionLevel, 100);
+        pollutionLevel = Mathf.Clamp(degreeOfErosion+pollutionLevel, 0, 100);
     }
 }

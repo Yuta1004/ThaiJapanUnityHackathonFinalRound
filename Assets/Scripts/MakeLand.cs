@@ -33,7 +33,19 @@ public class MakeLand : MonoBehaviour {
             Soils[i].GetComponent<SoilAttribute>().init();
             UpdateMaterial(i);
         }
+        StartCoroutine(PollutionSoil());
 	}
+
+    IEnumerator PollutionSoil(){
+        while (true){
+            yield return new WaitForSeconds(7.5f);
+            for (int i = 0; i < landLength * landLength; i++){
+                Soils[i].GetComponent<SoilAttribute>().PollutionErosion(10);
+                UpdateMaterial(i);
+            }
+            Debug.Log(Soils[1].GetComponent<SoilAttribute>().pollutionLevel);
+        }
+    }
 	
 	//マテリアルの変更
 	void UpdateMaterial (int index) {
