@@ -479,6 +479,7 @@ MonoBehaviour:
   trees:
   - {fileID: 1000011694247070, guid: b7ebff1b87d7ca945b423ef079c87d3f, type: 2}
   - {fileID: 1000011694247070, guid: da4f7b4359ecb4446a55ca12785c99c7, type: 2}
+  totelSetTree: 5
 --- !u!1 &1141738482
 GameObject:
   m_ObjectHideFlags: 0
