@@ -5,6 +5,7 @@ using UnityEngine;
 public class MakeLand : MonoBehaviour {
 
     public GameObject soil;
+    public GameObject initGameObject;
     public int landLength;
     public Material[] soilMaterials;
     /// <summary>
@@ -19,16 +20,17 @@ public class MakeLand : MonoBehaviour {
     private Vector3 InitPosition;
     private GameObject[] Soils;
     private SoilAttribute[] SoilAttributes;
+
 	void Start () {
-        InitPosition = this.transform.position;
+        InitPosition = initGameObject.transform.position;
         Soils = new GameObject[landLength * landLength];
         for (int i = 0; i < landLength*landLength; i++){
-            InitPosition = new Vector3(this.transform.position.x + (i % landLength) * 3,
+            InitPosition = new Vector3(initGameObject.transform.position.x + (i % landLength) * 3,
                                       0,
-                                       this.transform.position.z - (i / landLength) * 3);
+                                       initGameObject.transform.position.z - (i / landLength) * 3);
             Soils[i] = Instantiate(soil,
                                    InitPosition,
-                                   this.transform.rotation);
+                                   initGameObject.transform.rotation);
             Soils[i].AddComponent<SoilAttribute>();
             Soils[i].GetComponent<SoilAttribute>().init();
             UpdateMaterial(i);
