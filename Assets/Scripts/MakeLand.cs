@@ -9,6 +9,7 @@ public class MakeLand : MonoBehaviour {
     public int landLength;
     public Material[] soilMaterials;
     public GameObject[] trees;
+    public int totelSetTree;
     /// <summary>
     /// treeGrowthとMaterialの関係
     ///     ~ 20  
@@ -20,15 +21,17 @@ public class MakeLand : MonoBehaviour {
 
     private Vector3 InitPosition;
     private GameObject[] Soils;
-    private GameObject[] treeonsoil;
+    private GameObject[] treeOnSoil;
     private SoilAttribute[] SoilAttributes;
-    private int[] randomInt;
+    private int[] RandomInt;
 
 	void Start () {
+        
         InitPosition = initGameObject.transform.position;
         Soils = new GameObject[landLength * landLength];
-        treeonsoil = new GameObject[5];
-        randomInt = new int[5];
+        treeOnSoil = new GameObject[landLength * landLength];
+        RandomInt = new int[totelSetTree];
+
         for (int i = 0; i < landLength*landLength; i++){
             InitPosition = new Vector3(initGameObject.transform.position.x + (i % landLength) * 3,
                                       0,
@@ -41,14 +44,28 @@ public class MakeLand : MonoBehaviour {
             Soils[i].GetComponent<SoilAttribute>().init();
             UpdateMaterial(i);
         }
+        //最初の木の設定
         for (int i = 0; i < 5; i++){
-            randomInt[i] = Random.Range(50, 150);
-            treeonsoil[i] = setTree(randomInt[i]);
+            bool isContinue = false;
+            RandomInt[i] = Random.Range(50, 150);
+            for (int j = 0; j < i; j++){
+                if(RandomInt[i] == RandomInt[j]){
+                    RandomInt[i] = 0;
+                    isContinue = true;
+                }
+            }
+            if(isContinue){
+                i--;
+                Debug.Log("yes");
+                continue;
+            }
+            treeOnSoil[RandomInt[i]] = setTree(RandomInt[i]);
         }
         StartCoroutine(PollutionSoil());
 	}
 
     IEnumerator PollutionSoil(){
+        
         while (true){
             yield return new WaitForSeconds(7.5f);
             for (int i = 0; i < landLength * landLength; i++){
@@ -61,9 +78,10 @@ public class MakeLand : MonoBehaviour {
 	
 	//マテリアルの変更
 	void UpdateMaterial (int index) {
+        
         int pollitionLevel;
         pollitionLevel = Soils[index].GetComponent<SoilAttribute>().pollutionLevel;
-        Debug.Log(pollitionLevel);
+        //Debug.Log(pollitionLevel);
         if(pollitionLevel <= 20){
             Soils[index].GetComponent<Renderer>().material = soilMaterials[0];
         }else if(pollitionLevel <= 50){
