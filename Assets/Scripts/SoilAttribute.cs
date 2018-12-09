@@ -8,7 +8,7 @@ public class SoilAttribute : MonoBehaviour{
     public int pollutionLevel;
     public int treeGrowth;
 
-    private void Start(){
+    public void init(){
         //init attribute
         isTree = false;
         pollutionLevel = Random.Range(0, 50)+20;
@@ -23,7 +23,4 @@ public class SoilAttribute : MonoBehaviour{
     public void PollutionErosion(int degreeOfErosion){
         pollutionLevel = Mathf.Max(degreeOfErosion+pollutionLevel, 100);
     }
-
-    //private void SoilUpdate(){
-    //}
 }
