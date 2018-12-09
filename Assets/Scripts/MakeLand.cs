@@ -6,6 +6,8 @@ public class MakeLand : MonoBehaviour {
 
     public GameObject soil;
     public int landLength;
+    public Material[] soilMaterials;
+
     private Vector3 InitPosition;
 	void Start () {
         InitPosition = this.transform.position;

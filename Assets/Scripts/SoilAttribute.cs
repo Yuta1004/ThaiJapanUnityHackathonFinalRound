@@ -7,32 +7,30 @@ public class SoilAttribute : MonoBehaviour{
     public bool isTree;
     public int pollutionLevel;
     public int treeGrowth;
-    public Material[] soilMaterials;
 
     /// <summary>
     /// treeGrowthとMaterialの関係
-    ///     ~ 20  
+    ///     ~ 20 
     ///  21 ~ 50
     ///  51 ~ 80
     ///  81 ~ 
     /// </summary>
-    void Start(){
+    private void Start(){
         //init attribute
         isTree = false;
-        pollutionLevel = Random.Range(0, 100);
+        pollutionLevel = Random.Range(0, 50)+20;
         treeGrowth = 0;
     }
 
-    void PlantTree(){
+    public void PlantTree(){
         isTree = true;
         treeGrowth = 0;
     }
 
-    void PollutionErosion(int degreeOfErosion){
-        pollutionLevel += degreeOfErosion;
+    public void PollutionErosion(int degreeOfErosion){
+        pollutionLevel = Mathf.Max(degreeOfErosion+pollutionLevel, 100);
     }
 
-    void SoilUpdate(){
-        
-    }
+    //private void SoilUpdate(){
+    //}
 }
