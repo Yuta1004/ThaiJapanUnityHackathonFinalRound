@@ -9,6 +9,6 @@ public class OpeningSceneManage : MonoBehaviour {
 	
 	void goGame () {
 		FadeManager mFadeManager = FadeManager.Instance;
-		mFadeManager.LoadScene("main", 1.2f);
+		mFadeManager.LoadScene("main", 2.0f);
 	}
 }
