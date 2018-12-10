@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerEvent : MonoBehaviour {
 
     public bool isCanCutTree;
-    public bool isCanGetTree;
     public bool isCanHaveWater;
     public bool isCanCleanse;
     public bool isCanPlantTree;
@@ -30,16 +29,23 @@ public class PlayerEvent : MonoBehaviour {
 	}
 
     public void GetSpace(GameObject Soil){
+        int index = Soil.GetComponent<SoilAttribute>().SoilNumber;
         if (isCanPlantTree){
             if (HaveSeedings == 0){
                 return;
             }
             if (!Soil.GetComponent<SoilAttribute>().isTree){
-                int index = Soil.GetComponent<SoilAttribute>().SoilNumber;
                 Soil.gameObject.transform.root.GetComponent<MakeLand>().SetTree(index, false);
                 HaveSeedings--;
             }
             Debug.Log(HaveSeedings);
+        }
+
+        if(isCanCutTree){
+            if (!Soil.GetComponent<SoilAttribute>().isTree){
+                return;
+            }
+            Soil.gameObject.transform.root.GetComponent<MakeLand>().CutTree(index);
         }
     }
 }

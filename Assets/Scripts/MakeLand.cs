@@ -139,4 +139,11 @@ public class MakeLand : MonoBehaviour {
             treeOnSoil[index].transform.parent = Soils[index].transform;
         }
     }
+
+    public void CutTree(int index){
+        //木を切る
+        Soils[index].GetComponent<SoilAttribute>().CutTree();
+        Destroy(treeOnSoil[index].gameObject);
+        Debug.Log(treeOnSoil);
+    }
 }

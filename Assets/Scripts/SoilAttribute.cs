@@ -37,6 +37,15 @@ public class SoilAttribute : MonoBehaviour{
         }
     }
 
+    public void CutTree(){
+        isTree = false;
+        treeGrowth = 0;
+        isSeedling = false;
+        isYangeTree = false;
+        isLargeTree = false;
+    }
+
+
     public void UpdateGrowthPoint(){
         GrowthPoint = 10;
 	}
