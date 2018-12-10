@@ -8,6 +8,6 @@ public class StartButton : MonoBehaviour {
 //		SceneManager.LoadScene("stage1");
 	
 		FadeManager mFadeManager = FadeManager.Instance;
-		mFadeManager.LoadScene("main", 2.0f);
+		mFadeManager.LoadScene("Opening", 2.0f);
 	}
 }
