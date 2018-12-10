@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37680882, g: 0.40629113, b: 0.43513796, a: 1}
+  m_IndirectSpecularColor: {r: 0.33588368, g: 0.37208953, b: 0.40905994, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -840,7 +840,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.00021362305, y: 0}
-  m_SizeDelta: {x: 800, y: 350}
+  m_SizeDelta: {x: 5000, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &369516629
 MonoBehaviour:
@@ -2160,9 +2160,9 @@ Prefab:
     - target: {fileID: 114848903070698138, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
       propertyPath: m_Text
-      value: The oil crisis is going a bit further in the future. Along with the development
-        of society, huge amounts of harmful substances have flowed out and the soil
-        is deteriorating. So, Misaki and Unity will solve the situation!
+      value: Along with the development of society, a large amount of harmful substances
+        have leaked and the soil is deteriorating. So, Misaki and Unity will solve
+        the situation!
       objectReference: {fileID: 0}
     - target: {fileID: 114848903070698138, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
