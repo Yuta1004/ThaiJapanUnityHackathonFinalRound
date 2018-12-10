@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.33227652, g: 0.54588896, b: 0.6271543, a: 1}
+  m_IndirectSpecularColor: {r: 0.38951352, g: 0.6155847, b: 0.7102722, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -206,7 +206,7 @@ MonoBehaviour:
   delay: 0
   style: 2
   playOnAwake: 1
-  m_progress: 0.593957
+  m_progress: 0.165878
   usePosition: 1
   useRotation: 1
   useScale: 0
