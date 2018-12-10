@@ -10,6 +10,5 @@ public class HouseAttribute : MonoBehaviour {
     public void GetSpace(GameObject Player){
         int getTree = Player.GetComponent<PlayerEvent>().passTree();
         electricQuantity += getTree * getElectric;
-        Debug.Log(electricQuantity);
     }
 }

@@ -144,7 +144,6 @@ public class MakeLand : MonoBehaviour {
         //木を切る
         int getTree = Soils[index].GetComponent<SoilAttribute>().CutTree();
         Destroy(treeOnSoil[index].gameObject);
-        //Debug.Log(treeOnSoil);
         return getTree;
     }
 }

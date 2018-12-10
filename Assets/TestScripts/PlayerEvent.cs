@@ -40,7 +40,6 @@ public class PlayerEvent : MonoBehaviour
                 Soil.gameObject.transform.root.GetComponent<MakeLand>().SetTree(index, false);
                 HaveSeedings--;
             }
-            Debug.Log(HaveSeedings);
         }
 
         if (isCanCutTree){
@@ -53,6 +52,17 @@ public class PlayerEvent : MonoBehaviour
             }
             GetTree = Soil.gameObject.transform.root.GetComponent<MakeLand>().CutTree(index);
             IsGetTree = true;
+        }
+
+        if(isCanHaveWater){
+            if(HaveWater <= 0){
+                return;
+            }else if(!Soil.GetComponent<SoilAttribute>().isTree){
+                return;
+            }
+
+            Soil.GetComponent<SoilAttribute>().GetWater(10);
+            HaveWater -= 10;
         }
     }
 

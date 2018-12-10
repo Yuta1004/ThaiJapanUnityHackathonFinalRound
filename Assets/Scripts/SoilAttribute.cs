@@ -13,6 +13,7 @@ public class SoilAttribute : MonoBehaviour{
     private bool isSeedling;
     private bool isYangeTree;
     private bool isLargeTree;
+    private int HaveWater;
 
     public void init(int index){
         //init attribute
@@ -22,6 +23,7 @@ public class SoilAttribute : MonoBehaviour{
         isSeedling = false;
         isYangeTree = false;
         isLargeTree = false;
+        HaveWater = 0;
         SoilNumber = index;
     }
 
@@ -53,7 +55,10 @@ public class SoilAttribute : MonoBehaviour{
 	}
 
 	public void UpdateTree(){
-        treeGrowth = Mathf.Clamp(treeGrowth+GrowthPoint, 0, 200);
+        if (HaveWater > 0){
+            treeGrowth = Mathf.Clamp(treeGrowth + GrowthPoint, 0, 200);
+            HaveWater -= 2;
+        }
         if(treeGrowth <= 100){
             isSeedling = true;
         }else if(treeGrowth <= 199){
@@ -77,5 +82,9 @@ public class SoilAttribute : MonoBehaviour{
             return 0;
         }
         return 0;
+    }
+
+    public void GetWater(int water){
+        HaveWater += water;
     }
 }
