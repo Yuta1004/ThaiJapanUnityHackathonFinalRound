@@ -39,7 +39,7 @@ public class PlayerEvent : MonoBehaviour {
                 Soil.gameObject.transform.root.GetComponent<MakeLand>().SetTree(index, false);
                 HaveSeedings--;
             }
-        Debug.Log(HaveSeedings);
+            Debug.Log(HaveSeedings);
         }
     }
 }

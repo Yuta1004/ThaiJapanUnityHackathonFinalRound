@@ -34,9 +34,9 @@ public class MakeLand : MonoBehaviour {
         RandomInt = new int[totelSetTree];
 
         for (int i = 0; i < landLength*landLength; i++){
-            InitPosition = new Vector3(initGameObject.transform.position.x + (i % landLength) * 3,
+            InitPosition = new Vector3(initGameObject.transform.position.x + (i % landLength) * 5,
                                       0,
-                                       initGameObject.transform.position.z - (i / landLength) * 3);
+                                       initGameObject.transform.position.z - (i / landLength) * 5);
             Soils[i] = Instantiate(soil,
                                    InitPosition,
                                    initGameObject.transform.rotation);
@@ -49,7 +49,7 @@ public class MakeLand : MonoBehaviour {
         //最初の木の設定
         for (int i = 0; i < 5; i++){
             bool isContinue = false;
-            RandomInt[i] = Random.Range(50, 150);
+            RandomInt[i] = Random.Range(0, landLength * landLength);
             for (int j = 0; j < i; j++){
                 if(RandomInt[i] == RandomInt[j]){
                     RandomInt[i] = 0;
