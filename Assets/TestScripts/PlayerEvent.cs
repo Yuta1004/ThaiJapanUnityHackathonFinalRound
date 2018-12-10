@@ -12,9 +12,9 @@ public class PlayerEvent : MonoBehaviour
 
     private bool IsHaveWater;
     private bool IsGetWater;
-    private float HaveWater;
+    private int HaveWater;
     private bool IsHaveElectr;
-    private float HaveElectr;
+    private int HaveElectr;
     private bool IsGetTree;
     private int GetTree;
     private int HaveSeedings;
@@ -70,6 +70,10 @@ public class PlayerEvent : MonoBehaviour
         if(isCanHaveWater){
             HaveWater = 100;
         }
+    }
+
+    public void GetElectr(GameObject House){
+        HaveElectr = House.GetComponent<HouseAttribute>().GiveElectr(HaveElectr);
     }
 
     public int passTree(){
