@@ -7,12 +7,12 @@ public class SoilAttribute : MonoBehaviour{
     public bool isTree;
     public int pollutionLevel;
     public int treeGrowth;
+    public int SoilNumber;
 
     private int GrowthPoint;
     private bool isSeedling;
     private bool isYangeTree;
     private bool isLargeTree;
-    private int SoilNumber;
 
     public void init(int index){
         //init attribute

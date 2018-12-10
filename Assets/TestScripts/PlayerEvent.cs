@@ -34,7 +34,9 @@ public class PlayerEvent : MonoBehaviour {
             return;
         }
         if (!Soil.GetComponent<SoilAttribute>().isTree){
-            Soil.GetComponent<SoilAttribute>().PlantTree(0);
+            //Soil.GetComponent<SoilAttribute>().PlantTree(0);
+            int index = Soil.GetComponent<SoilAttribute>().SoilNumber;
+            Soil.gameObject.transform.root.GetComponent<MakeLand>().SetTree(index, false);
             HaveSeedings--;
         }
         Debug.Log(HaveSeedings);

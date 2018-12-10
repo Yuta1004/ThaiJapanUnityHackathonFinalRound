@@ -61,7 +61,7 @@ public class MakeLand : MonoBehaviour {
                 Debug.Log("yes");
                 continue;
             }
-            SetTree(RandomInt[i]);
+            SetTree(RandomInt[i], true);
         }
         //汚染開始！！
         StartCoroutine(PollutionSoil());
@@ -101,10 +101,18 @@ public class MakeLand : MonoBehaviour {
 	}
 
     //木を植える
-    public void SetTree(int index){
+    public void SetTree(int index, bool isSet){
         
-        Soils[index].GetComponent<SoilAttribute>().PlantTree(Random.Range(101, 150));
-        treeOnSoil[index] = Instantiate(trees[1], 
+        int treeIndex;
+        if(isSet){
+            Soils[index].GetComponent<SoilAttribute>().PlantTree(Random.Range(101, 150));
+            treeIndex = 1;
+        }else{
+            Soils[index].GetComponent<SoilAttribute>().PlantTree(0);
+            treeIndex = 0;
+            
+        }
+        treeOnSoil[index] = Instantiate(trees[treeIndex], 
                                       Soils[index].transform.position, 
                                       Soils[index].transform.rotation);
         treeOnSoil[index].transform.parent = Soils[index].transform;
