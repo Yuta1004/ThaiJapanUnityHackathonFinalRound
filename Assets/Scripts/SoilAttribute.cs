@@ -8,19 +8,65 @@ public class SoilAttribute : MonoBehaviour{
     public int pollutionLevel;
     public int treeGrowth;
 
+    private int GrowthPoint;
+    private bool isSeedling;
+    private bool isYangeTree;
+    private bool isLargeTree;
+
     public void init(){
         //init attribute
         isTree = false;
         pollutionLevel = Random.Range(0, 50)+20;
         treeGrowth = 0;
+        isSeedling = false;
+        isYangeTree = false;
+        isLargeTree = false;
     }
 
-    public void PlantTree(){
+    public void PlantTree(int getTreeGrowth){
         isTree = true;
-        treeGrowth = 0;
+        treeGrowth = getTreeGrowth;
     }
 
-    public void PollutionErosion(int degreeOfErosion){
+    public void UpdateGrowthPoint(){
+        GrowthPoint = 10;
+	}
+
+	public void UpdateTree(){
+        treeGrowth = Mathf.Clamp(treeGrowth+GrowthPoint, 0, 200);
+        if(treeGrowth <= 100){
+            isSeedling = true;
+        }else if(treeGrowth <= 199){
+            isYangeTree = true;
+        }else{
+            isLargeTree = true;
+            //Debug.Log("ko");
+        }
+	}
+
+	public void PollutionErosion(int degreeOfErosion){
         pollutionLevel = Mathf.Clamp(degreeOfErosion+pollutionLevel, 0, 100);
+    }
+
+    public bool GetBool(int num){
+        if(num == 0){
+            return isSeedling;  
+        }else if(num == 1){
+            return isYangeTree;
+        }else if(num == 2){
+            return isLargeTree;
+        }
+        return false;
+    }
+
+    public int TreeRank(){
+        if(isLargeTree){
+            return 2;
+        }else if(isYangeTree){
+            return 1;
+        }else if(isSeedling){
+            return 0;
+        }
+        return 0;
     }
 }

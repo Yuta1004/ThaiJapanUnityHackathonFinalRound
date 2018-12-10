@@ -10,6 +10,7 @@ public class MakeLand : MonoBehaviour {
     public Material[] soilMaterials;
     public GameObject[] trees;
     public int totelSetTree;
+    public float waveTime;
     /// <summary>
     /// treeGrowthとMaterialの関係
     ///     ~ 20  
@@ -42,6 +43,7 @@ public class MakeLand : MonoBehaviour {
             Soils[i].transform.parent = this.gameObject.transform;
             Soils[i].AddComponent<SoilAttribute>();
             Soils[i].GetComponent<SoilAttribute>().init();
+            Soils[i].GetComponent<SoilAttribute>().UpdateGrowthPoint();
             UpdateMaterial(i);
         }
         //最初の木の設定
@@ -59,18 +61,20 @@ public class MakeLand : MonoBehaviour {
                 Debug.Log("yes");
                 continue;
             }
-            treeOnSoil[RandomInt[i]] = setTree(RandomInt[i]);
+            treeOnSoil[RandomInt[i]] = SetTree(RandomInt[i]);
         }
+        //汚染開始！！
         StartCoroutine(PollutionSoil());
 	}
 
     IEnumerator PollutionSoil(){
         
         while (true){
-            yield return new WaitForSeconds(7.5f);
+            yield return new WaitForSeconds(waveTime);
             for (int i = 0; i < landLength * landLength; i++){
                 Soils[i].GetComponent<SoilAttribute>().PollutionErosion(10);
                 UpdateMaterial(i);
+                UpdateTree(i);
             }
             //Debug.Log(Soils[1].GetComponent<SoilAttribute>().pollutionLevel);
         }
@@ -96,14 +100,36 @@ public class MakeLand : MonoBehaviour {
 	}
 
     //木を植える
-    GameObject setTree(int index){
+    public GameObject SetTree(int index){
         
-        Soils[index].GetComponent<SoilAttribute>().PlantTree();
+        Soils[index].GetComponent<SoilAttribute>().PlantTree(Random.Range(100, 150));
         GameObject tree = Instantiate(trees[0], 
                                       Soils[index].transform.position, 
                                       Soils[index].transform.rotation);
         tree.transform.parent = Soils[index].transform;
         Debug.Log(tree.transform.position);
         return tree;
+    }
+
+    public void UpdateTree(int index){
+        //木を成長させる
+        if(!Soils[index].GetComponent<SoilAttribute>().isTree){
+            return;
+        }
+        int treeRank = Soils[index].GetComponent<SoilAttribute>().TreeRank();
+        bool beforeBool = Soils[index].GetComponent<SoilAttribute>().GetBool(treeRank);
+        //Debug.Log(treeRank);
+        Soils[index].GetComponent<SoilAttribute>().UpdateTree();
+        treeRank = Soils[index].GetComponent<SoilAttribute>().TreeRank();
+        bool afterBool = Soils[index].GetComponent<SoilAttribute>().GetBool(treeRank);
+        Debug.Log(beforeBool+"  "+afterBool+" "+Soils[index].GetComponent<SoilAttribute>().treeGrowth);
+        //木の成長度に応じてオブジェクトを入れ替える
+        if(beforeBool != afterBool){
+            Destroy(treeOnSoil[index]);
+            treeOnSoil[index] = Instantiate(trees[treeRank],
+                                      Soils[index].transform.position,
+                                      Soils[index].transform.rotation);
+            treeOnSoil[index].transform.parent = Soils[index].transform;
+        }
     }
 }
