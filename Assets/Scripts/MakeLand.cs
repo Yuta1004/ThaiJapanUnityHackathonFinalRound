@@ -11,6 +11,7 @@ public class MakeLand : MonoBehaviour {
     public GameObject[] trees;
     public int totelSetTree;
     public float waveTime;
+    public GameObject Cleaner;
     /// <summary>
     /// treeGrowthとMaterialの関係
     ///     ~ 20  
@@ -22,7 +23,7 @@ public class MakeLand : MonoBehaviour {
 
     private Vector3 InitPosition;
     private GameObject[] Soils;
-    private GameObject[] treeOnSoil;
+    private GameObject[] OnSoil;
     private SoilAttribute[] SoilAttributes;
     private int[] RandomInt;
 
@@ -30,7 +31,7 @@ public class MakeLand : MonoBehaviour {
         
         InitPosition = initGameObject.transform.position;
         Soils = new GameObject[landLength * landLength];
-        treeOnSoil = new GameObject[landLength * landLength];
+        OnSoil = new GameObject[landLength * landLength];
         RandomInt = new int[totelSetTree];
 
         for (int i = 0; i < landLength*landLength; i++){
@@ -112,10 +113,10 @@ public class MakeLand : MonoBehaviour {
             treeIndex = 0;
             
         }
-        treeOnSoil[index] = Instantiate(trees[treeIndex], 
+        OnSoil[index] = Instantiate(trees[treeIndex], 
                                       Soils[index].transform.position, 
                                       Soils[index].transform.rotation);
-        treeOnSoil[index].transform.parent = Soils[index].transform;
+        OnSoil[index].transform.parent = Soils[index].transform;
         return;
     }
 
@@ -132,19 +133,29 @@ public class MakeLand : MonoBehaviour {
         int afterTreeRank = Soils[index].GetComponent<SoilAttribute>().TreeRank();
         //木の成長度に応じてオブジェクトを入れ替える
         if(beforeTreeRank != afterTreeRank){
-            Destroy(treeOnSoil[index]);
-            treeOnSoil[index] = Instantiate(trees[afterTreeRank],
+            Destroy(OnSoil[index]);
+            OnSoil[index] = Instantiate(trees[afterTreeRank],
                                       Soils[index].transform.position,
                                       Soils[index].transform.rotation);
-            treeOnSoil[index].transform.parent = Soils[index].transform;
+            OnSoil[index].transform.parent = Soils[index].transform;
         }
     }
 
     public int CutTree(int index){
         //木を切る
         int getTree = Soils[index].GetComponent<SoilAttribute>().CutTree();
-        Destroy(treeOnSoil[index].gameObject);
-        //Debug.Log(treeOnSoil);
+        Destroy(OnSoil[index].gameObject);
         return getTree;
+    }
+
+    //浄化機を置く
+    public void SetCleaner(int index){
+        OnSoil[index] = Instantiate(Cleaner,
+                                      Soils[index].transform.position,
+                                      Soils[index].transform.rotation);
+        OnSoil[index].transform.parent = Soils[index].transform;
+        OnSoil[index].transform.position = new Vector3(OnSoil[index].transform.position.x,
+                                                       OnSoil[index].transform.position.y + 0.5f,
+                                                       OnSoil[index].transform.position.z);
     }
 }

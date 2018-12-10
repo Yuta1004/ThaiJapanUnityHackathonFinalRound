@@ -18,8 +18,13 @@ public class GetPlayerEvent : MonoBehaviour {
         
         if (Input.GetKeyDown(KeyCode.Space)){
             if (other.gameObject.tag == "House"){
-                other.gameObject.transform.root.gameObject.transform.GetChild(1).
+                if(this.gameObject.GetComponent<PlayerEvent>().isCanCleanse){
+                    this.gameObject.GetComponent<PlayerEvent>().
+                        GetElectr(other.gameObject.transform.root.gameObject.transform.GetChild(1).gameObject);
+                }else{
+                    other.gameObject.transform.root.gameObject.transform.GetChild(1).
                      GetComponent<HouseAttribute>().GetSpace(this.gameObject);
+                }
             }else if(other.gameObject.tag == "Well"){
                 this.gameObject.GetComponent<PlayerEvent>().GetSpaceWater();
             }

@@ -12,9 +12,9 @@ public class PlayerEvent : MonoBehaviour
 
     private bool IsHaveWater;
     private bool IsGetWater;
-    private float HaveWater;
+    private int HaveWater;
     private bool IsHaveElectr;
-    private float HaveElectr;
+    private int HaveElectr;
     private bool IsGetTree;
     private int GetTree;
     private int HaveSeedings;
@@ -36,11 +36,13 @@ public class PlayerEvent : MonoBehaviour
         if (isCanPlantTree){
             if (HaveSeedings == 0){
                 return;
-            }if (!Soil.GetComponent<SoilAttribute>().isTree){
+            }else if (Soil.GetComponent<SoilAttribute>().isCleaner){
+                return;
+            }
+            if (!Soil.GetComponent<SoilAttribute>().isTree){
                 Soil.gameObject.transform.root.GetComponent<MakeLand>().SetTree(index, false);
                 HaveSeedings--;
             }
-            Debug.Log(HaveSeedings);
         }
 
         if (isCanCutTree){
@@ -54,12 +56,37 @@ public class PlayerEvent : MonoBehaviour
             GetTree = Soil.gameObject.transform.root.GetComponent<MakeLand>().CutTree(index);
             IsGetTree = true;
         }
+
+        if(isCanHaveWater){
+            if(HaveWater <= 0){
+                return;
+            }else if(!Soil.GetComponent<SoilAttribute>().isTree){
+                return;
+            }
+
+            Soil.GetComponent<SoilAttribute>().GetWater(10);
+            HaveWater -= 10;
+        }
+
+        if(isCanCleanse){
+            if(Soil.GetComponent<SoilAttribute>().isCleaner){
+                return;
+            }else if(Soil.GetComponent<SoilAttribute>().isTree){
+                return;
+            }
+            Soil.gameObject.transform.root.GetComponent<MakeLand>().SetCleaner(index);
+
+        }
     }
 
     public void GetSpaceWater(){
         if(isCanHaveWater){
             HaveWater = 100;
         }
+    }
+
+    public void GetElectr(GameObject House){
+        HaveElectr = House.GetComponent<HouseAttribute>().GiveElectr(HaveElectr);
     }
 
     public int passTree(){
