@@ -8,6 +8,7 @@ public class PlayerEvent : MonoBehaviour {
     public bool isCanGetTree;
     public bool isCanHaveWater;
     public bool isCanCleanse;
+    public bool isCanPlantTree;
 
     private bool IsHaveWater;
     private bool IsGetWater;
@@ -29,16 +30,16 @@ public class PlayerEvent : MonoBehaviour {
 	}
 
     public void GetSpace(GameObject Soil){
-        Debug.Log("     "+HaveSeedings);
-        if (HaveSeedings == 0){
-            return;
-        }
-        if (!Soil.GetComponent<SoilAttribute>().isTree){
-            //Soil.GetComponent<SoilAttribute>().PlantTree(0);
-            int index = Soil.GetComponent<SoilAttribute>().SoilNumber;
-            Soil.gameObject.transform.root.GetComponent<MakeLand>().SetTree(index, false);
-            HaveSeedings--;
-        }
+        if (isCanPlantTree){
+            if (HaveSeedings == 0){
+                return;
+            }
+            if (!Soil.GetComponent<SoilAttribute>().isTree){
+                int index = Soil.GetComponent<SoilAttribute>().SoilNumber;
+                Soil.gameObject.transform.root.GetComponent<MakeLand>().SetTree(index, false);
+                HaveSeedings--;
+            }
         Debug.Log(HaveSeedings);
+        }
     }
 }
