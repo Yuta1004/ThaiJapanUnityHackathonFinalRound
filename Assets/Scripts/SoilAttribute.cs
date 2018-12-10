@@ -37,6 +37,17 @@ public class SoilAttribute : MonoBehaviour{
         }
     }
 
+    public int CutTree(){
+        int Rank = TreeRank();
+        isTree = false;
+        treeGrowth = 0;
+        isSeedling = false;
+        isYangeTree = false;
+        isLargeTree = false;
+        return Rank;
+    }
+
+
     public void UpdateGrowthPoint(){
         GrowthPoint = 10;
 	}
@@ -52,6 +63,7 @@ public class SoilAttribute : MonoBehaviour{
         }
 	}
 
+    //汚染度変化
 	public void PollutionErosion(int degreeOfErosion){
         pollutionLevel = Mathf.Clamp(degreeOfErosion+pollutionLevel, 0, 100);
     }
