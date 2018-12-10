@@ -176,8 +176,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 41182903}
-  m_LocalRotation: {x: -0.025200224, y: 0.95226306, z: 0.29300568, w: 0.08190127}
-  m_LocalPosition: {x: -16.38149, y: -15.595469, z: 42.6194}
+  m_LocalRotation: {x: -0.025200218, y: 0.95226306, z: 0.29300565, w: 0.08190127}
+  m_LocalPosition: {x: -15.812731, y: -13.331286, z: 39.337387}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -685,7 +685,7 @@ MonoBehaviour:
   - {fileID: 1000011694247070, guid: b7ebff1b87d7ca945b423ef079c87d3f, type: 2}
   - {fileID: 1000011694247070, guid: da4f7b4359ecb4446a55ca12785c99c7, type: 2}
   totelSetTree: 5
-  waveTime: 1
+  waveTime: 10
 --- !u!1 &1141738482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,11 +1183,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 143d1e66e51304e159715ecd1773995c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCanCutTree: 0
-  isCanGetTree: 0
+  isCanCutTree: 1
   isCanHaveWater: 0
   isCanCleanse: 0
-  isCanPlantTree: 0
+  isCanPlantTree: 1
 --- !u!1 &1974346428
 GameObject:
   m_ObjectHideFlags: 0

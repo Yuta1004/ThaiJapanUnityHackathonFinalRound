@@ -44,6 +44,8 @@ public class PlayerEvent : MonoBehaviour {
         if(isCanCutTree){
             if (!Soil.GetComponent<SoilAttribute>().isTree){
                 return;
+            }else if(Soil.GetComponent<SoilAttribute>().TreeRank() == 0){
+                return;
             }
             Soil.gameObject.transform.root.GetComponent<MakeLand>().CutTree(index);
         }
