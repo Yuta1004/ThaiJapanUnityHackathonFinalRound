@@ -25,13 +25,13 @@ public class PlayerEvent : MonoBehaviour
         IsGetWater = false;
         IsHaveElectr = false;
         IsGetTree = false;
-        HaveWater = 0;
+        HaveWater = 50;
         HaveElectr = 0;
         HaveSeedings = 3;
     }
 
     //スペースを押した時
-    public void GetSpace(GameObject Soil){
+    public void GetSpaceSoil(GameObject Soil){
         int index = Soil.GetComponent<SoilAttribute>().SoilNumber;
         if (isCanPlantTree){
             if (HaveSeedings == 0){
@@ -53,6 +53,12 @@ public class PlayerEvent : MonoBehaviour
             }
             GetTree = Soil.gameObject.transform.root.GetComponent<MakeLand>().CutTree(index);
             IsGetTree = true;
+        }
+    }
+
+    public void GetSpaceWater(){
+        if(isCanHaveWater){
+            HaveWater = 100;
         }
     }
 

@@ -9,7 +9,7 @@ public class GetPlayerEvent : MonoBehaviour {
         //Event発行
         if(collision.gameObject.tag == "Soil"){
             if (Input.GetKeyDown(KeyCode.Space)){
-                this.gameObject.GetComponent<PlayerEvent>().GetSpace(collision.gameObject);
+                this.gameObject.GetComponent<PlayerEvent>().GetSpaceSoil(collision.gameObject);
             }
         }
 	}
@@ -18,8 +18,10 @@ public class GetPlayerEvent : MonoBehaviour {
         
         if (Input.GetKeyDown(KeyCode.Space)){
             if (other.gameObject.tag == "House"){
-                //Debug.Log(other.gameObject.transform.root.gameObject.transform.GetChild(1).gameObject.name);
-                other.gameObject.transform.root.gameObject.transform.GetChild(1).GetComponent<HouseAttribute>().GetSpace(this.gameObject);
+                other.gameObject.transform.root.gameObject.transform.GetChild(1).
+                     GetComponent<HouseAttribute>().GetSpace(this.gameObject);
+            }else if(other.gameObject.tag == "Well"){
+                this.gameObject.GetComponent<PlayerEvent>().GetSpaceWater();
             }
         }
 		
