@@ -5,6 +5,7 @@ using UnityEngine;
 public class SoilAttribute : MonoBehaviour{
 
     public bool isTree;
+    public bool isCleaner;
     public int pollutionLevel;
     public int treeGrowth;
     public int SoilNumber;
@@ -18,6 +19,7 @@ public class SoilAttribute : MonoBehaviour{
     public void init(int index){
         //init attribute
         isTree = false;
+        isCleaner = false;
         pollutionLevel = Random.Range(0, 50)+20;
         treeGrowth = 0;
         isSeedling = false;
@@ -86,5 +88,9 @@ public class SoilAttribute : MonoBehaviour{
 
     public void GetWater(int water){
         HaveWater += water;
+    }
+
+    public void SetCleaner(){
+        isCleaner = true;
     }
 }

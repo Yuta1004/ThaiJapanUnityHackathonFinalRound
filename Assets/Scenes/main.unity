@@ -176,8 +176,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 41182903}
-  m_LocalRotation: {x: -0.49809742, y: 0.07547911, z: 0.0435779, w: 0.8627299}
-  m_LocalPosition: {x: 9.5, y: -37.36, z: -25.5}
+  m_LocalRotation: {x: -0.13965891, y: 0.6507021, z: 0.1234568, w: 0.73609823}
+  m_LocalPosition: {x: -14.469917, y: -9.171189, z: 2.6566648}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -856,6 +856,7 @@ MonoBehaviour:
   - {fileID: 1000011694247070, guid: da4f7b4359ecb4446a55ca12785c99c7, type: 2}
   totelSetTree: 5
   waveTime: 1
+  Cleaner: {fileID: 1163223737683230, guid: 9a2945610efd842d186dd3a54a1fbb4e, type: 2}
 --- !u!1 &1141738482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,8 +1083,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1346745954}
-  m_LocalRotation: {x: -0.13965891, y: 0.6507021, z: 0.1234568, w: 0.73609823}
-  m_LocalPosition: {x: -26.864883, y: -14.087319, z: 1.1243477}
+  m_LocalRotation: {x: -0.13965888, y: 0.6507022, z: 0.123456806, w: 0.7360982}
+  m_LocalPosition: {x: 0.8603821, y: -3.0908396, z: 4.5518594}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1402,7 +1403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCanCutTree: 0
   isCanHaveWater: 0
-  isCanCleanse: 0
+  isCanCleanse: 1
   isCanPlantTree: 0
 --- !u!1 &1974346428
 GameObject:

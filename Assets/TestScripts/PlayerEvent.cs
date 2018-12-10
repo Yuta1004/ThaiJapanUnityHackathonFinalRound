@@ -36,7 +36,10 @@ public class PlayerEvent : MonoBehaviour
         if (isCanPlantTree){
             if (HaveSeedings == 0){
                 return;
-            }if (!Soil.GetComponent<SoilAttribute>().isTree){
+            }else if (Soil.GetComponent<SoilAttribute>().isCleaner){
+                return;
+            }
+            if (!Soil.GetComponent<SoilAttribute>().isTree){
                 Soil.gameObject.transform.root.GetComponent<MakeLand>().SetTree(index, false);
                 HaveSeedings--;
             }
@@ -63,6 +66,16 @@ public class PlayerEvent : MonoBehaviour
 
             Soil.GetComponent<SoilAttribute>().GetWater(10);
             HaveWater -= 10;
+        }
+
+        if(isCanCleanse){
+            if(Soil.GetComponent<SoilAttribute>().isCleaner){
+                return;
+            }else if(Soil.GetComponent<SoilAttribute>().isTree){
+                return;
+            }
+            Soil.gameObject.transform.root.GetComponent<MakeLand>().SetCleaner(index);
+
         }
     }
 
