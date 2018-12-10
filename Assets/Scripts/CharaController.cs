@@ -2,40 +2,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MisakiController : MonoBehaviour {
+public class CharaController : MonoBehaviour {
+	public string keySetup = "";
+	
 	private Animator animator;
 	private bool[] isPressing = {
 		false, false, false, false
 	};
+	private KeyCode[][] keys = new KeyCode[][]{
+		new KeyCode[] { KeyCode.W, KeyCode.S, KeyCode.A, KeyCode.D }, 
+		new KeyCode[] { KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.LeftArrow, KeyCode.RightArrow}
+	};
+	private int keySetupInt;
 
 	// Use this for initialization
 	void Start () {
 		animator = gameObject.GetComponent<Animator>();
+		if (keySetup == "WASD") keySetupInt = 0;
+		else keySetupInt = 1;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		// 十字
 		bool flag = false;
-		if (Input.GetKey(KeyCode.UpArrow)) {
+		if (Input.GetKey(keys[keySetupInt][0])) {
 			gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
 			flag = true;
 			isPressing[0] = true;
 		} else {isPressing[0] = false; }
 
-		if (Input.GetKey(KeyCode.DownArrow)) {
+		if (Input.GetKey(keys[keySetupInt][1])) {
 			gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
 			flag = true;
 			isPressing[2] = true;
 		} else {isPressing[2] = false; }
 		
-		if (Input.GetKey(KeyCode.LeftArrow)) {
+		if (Input.GetKey(keys[keySetupInt][2])) {
 			gameObject.transform.rotation = Quaternion.Euler(0, 270, 0);
 			flag = true;
 			isPressing[3] = true;
 		} else {isPressing[3] = false; }
 		
-		if (Input.GetKey(KeyCode.RightArrow)) {
+		if (Input.GetKey(keys[keySetupInt][3])) {
 			gameObject.transform.rotation = Quaternion.Euler(0, 90, 0);
 			flag = true;
 			isPressing[1] = true;
