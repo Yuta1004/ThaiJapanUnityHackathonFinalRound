@@ -206,7 +206,7 @@ MonoBehaviour:
   delay: 0
   style: 2
   playOnAwake: 1
-  m_progress: 0.21484315
+  m_progress: 0.22236907
   usePosition: 0
   useRotation: 1
   useScale: 0
@@ -416,7 +416,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a7e6c39f5c07b41cdb763f5635b954f8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: cd1bc9ba3c1554c828adc9534fa68687, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.8
   m_Pitch: 1
