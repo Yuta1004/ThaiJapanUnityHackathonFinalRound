@@ -26,7 +26,7 @@ public class MakeLand : MonoBehaviour {
     private SoilAttribute[] SoilAttributes;
     private int[] RandomInt;
 
-	void Start () {
+	private void Start () {
         
         InitPosition = initGameObject.transform.position;
         Soils = new GameObject[landLength * landLength];
@@ -81,7 +81,7 @@ public class MakeLand : MonoBehaviour {
     }
 	
 	//マテリアルの変更
-	void UpdateMaterial (int index) {
+	public void UpdateMaterial (int index) {
         
         int pollitionLevel;
         pollitionLevel = Soils[index].GetComponent<SoilAttribute>().pollutionLevel;
@@ -102,8 +102,8 @@ public class MakeLand : MonoBehaviour {
     //木を植える
     public GameObject SetTree(int index){
         
-        Soils[index].GetComponent<SoilAttribute>().PlantTree(Random.Range(100, 150));
-        GameObject tree = Instantiate(trees[0], 
+        Soils[index].GetComponent<SoilAttribute>().PlantTree(Random.Range(101, 150));
+        GameObject tree = Instantiate(trees[1], 
                                       Soils[index].transform.position, 
                                       Soils[index].transform.rotation);
         tree.transform.parent = Soils[index].transform;
@@ -116,17 +116,18 @@ public class MakeLand : MonoBehaviour {
         if(!Soils[index].GetComponent<SoilAttribute>().isTree){
             return;
         }
-        int treeRank = Soils[index].GetComponent<SoilAttribute>().TreeRank();
-        bool beforeBool = Soils[index].GetComponent<SoilAttribute>().GetBool(treeRank);
-        //Debug.Log(treeRank);
+        int beforeTreeRank = Soils[index].GetComponent<SoilAttribute>().TreeRank();
+        if(beforeTreeRank == 2){
+            return;
+        }
         Soils[index].GetComponent<SoilAttribute>().UpdateTree();
-        treeRank = Soils[index].GetComponent<SoilAttribute>().TreeRank();
-        bool afterBool = Soils[index].GetComponent<SoilAttribute>().GetBool(treeRank);
-        Debug.Log(beforeBool+"  "+afterBool+" "+Soils[index].GetComponent<SoilAttribute>().treeGrowth);
+        int afterTreeRank = Soils[index].GetComponent<SoilAttribute>().TreeRank();
+        Debug.Log(Soils[index].GetComponent<SoilAttribute>().treeGrowth);
         //木の成長度に応じてオブジェクトを入れ替える
-        if(beforeBool != afterBool){
+        if(beforeTreeRank != afterTreeRank){
+            Debug.Log("hennge!!");
             Destroy(treeOnSoil[index]);
-            treeOnSoil[index] = Instantiate(trees[treeRank],
+            treeOnSoil[index] = Instantiate(trees[afterTreeRank],
                                       Soils[index].transform.position,
                                       Soils[index].transform.rotation);
             treeOnSoil[index].transform.parent = Soils[index].transform;
