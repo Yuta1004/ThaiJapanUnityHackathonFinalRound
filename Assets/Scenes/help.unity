@@ -1038,7 +1038,7 @@ Prefab:
     - target: {fileID: 224558083022984544, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 224558083022984544, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
@@ -1092,14 +1092,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1783812275005948, guid: 002b139d81f884d61996fd91677c563d, type: 2}
       propertyPath: m_Name
-      value: 2pAction2
+      value: 2pAction3
       objectReference: {fileID: 0}
     - target: {fileID: 114831657294989470, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
       propertyPath: m_Text
       value: '2P
 
-        Action2'
+        Action3'
       objectReference: {fileID: 0}
     - target: {fileID: 114848903070698138, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
@@ -1232,14 +1232,14 @@ RectTransform:
   m_GameObject: {fileID: 649951166}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0751, y: 0.87528, z: 1}
+  m_LocalScale: {x: 1.0239279, y: 1.1114918, z: 1.26987}
   m_Children: []
   m_Father: {fileID: 301395598}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.7, y: -70.6}
+  m_AnchoredPosition: {x: 9.7, y: -76}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &649951168
@@ -1261,8 +1261,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: ae33aba84a9764bed8b94d49f69fba5f, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1399,8 +1399,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: e643fdb43072b4cdc87056262df79e96, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1570,7 +1570,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: -96}
+  m_AnchoredPosition: {x: 2, y: -87}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &838669401
@@ -2160,9 +2160,9 @@ Prefab:
     - target: {fileID: 114848903070698138, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
       propertyPath: m_Text
-      value: Along with the development of society, a large amount of harmful substances
-        have leaked and the soil is deteriorating. So, Misaki and Unity will solve
-        the situation!
+      value: Along with the development of society, large quantities of harmful substances
+        have leaked out and the soil is deteriorating. And electricity is not enough.
+        So, Misaki and Unity will solve the situation!
       objectReference: {fileID: 0}
     - target: {fileID: 114848903070698138, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
@@ -2894,9 +2894,9 @@ RectTransform:
   - {fileID: 1176659372}
   - {fileID: 1547477621}
   - {fileID: 70954039}
+  - {fileID: 1640343468}
   - {fileID: 528394783}
   - {fileID: 1487996957}
-  - {fileID: 1640343468}
   - {fileID: 1110735856}
   m_Father: {fileID: 2051690558}
   m_RootOrder: 0
@@ -3125,7 +3125,7 @@ Prefab:
     - target: {fileID: 224558083022984544, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 224558083022984544, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
@@ -3179,20 +3179,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1783812275005948, guid: 002b139d81f884d61996fd91677c563d, type: 2}
       propertyPath: m_Name
-      value: 2pAction3
+      value: 2pAction4
       objectReference: {fileID: 0}
     - target: {fileID: 114831657294989470, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
       propertyPath: m_Text
       value: '2P
 
-        Action3'
+        Action4'
       objectReference: {fileID: 0}
     - target: {fileID: 114848903070698138, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
       propertyPath: m_Text
-      value: Player 2 brings the harvested tree close to the house and presses the
-        enter key to make electricity.
+      value: 'Player 2 brings the harvested tree close to the house and presses the
+        enter key to make electricity. '
       objectReference: {fileID: 0}
     - target: {fileID: 224579453754850712, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
@@ -3429,7 +3429,7 @@ Prefab:
     - target: {fileID: 224558083022984544, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 224558083022984544, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
@@ -3483,12 +3483,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1783812275005948, guid: 002b139d81f884d61996fd91677c563d, type: 2}
       propertyPath: m_Name
-      value: 2PAction4
+      value: 2PAction2
       objectReference: {fileID: 0}
     - target: {fileID: 114831657294989470, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
       propertyPath: m_Text
-      value: "2P \nAction4"
+      value: "2P \nAction2"
       objectReference: {fileID: 0}
     - target: {fileID: 114848903070698138, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
@@ -4041,8 +4041,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 33323ea626e1a4738b2e7127def995a9, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
