@@ -37,12 +37,14 @@ public class SoilAttribute : MonoBehaviour{
         }
     }
 
-    public void CutTree(){
+    public int CutTree(){
+        int Rank = TreeRank();
         isTree = false;
         treeGrowth = 0;
         isSeedling = false;
         isYangeTree = false;
         isLargeTree = false;
+        return Rank;
     }
 
 

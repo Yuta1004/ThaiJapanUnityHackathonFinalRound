@@ -15,6 +15,7 @@ public class PlayerEvent : MonoBehaviour {
     private bool IsHaveElectr;
     private float HaveElectr;
     private bool IsGetTree;
+    private int GetTree;
     private int HaveSeedings;
 
 	// Use this for initialization
@@ -44,10 +45,13 @@ public class PlayerEvent : MonoBehaviour {
         if(isCanCutTree){
             if (!Soil.GetComponent<SoilAttribute>().isTree){
                 return;
+            }else if(IsGetTree){
+                return;
             }else if(Soil.GetComponent<SoilAttribute>().TreeRank() == 0){
                 return;
             }
-            Soil.gameObject.transform.root.GetComponent<MakeLand>().CutTree(index);
+            GetTree = Soil.gameObject.transform.root.GetComponent<MakeLand>().CutTree(index);
+            IsGetTree = true;
         }
     }
 }
