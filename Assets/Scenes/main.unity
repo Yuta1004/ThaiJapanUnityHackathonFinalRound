@@ -176,8 +176,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 41182903}
-  m_LocalRotation: {x: -0.13965891, y: 0.6507021, z: 0.1234568, w: 0.73609823}
-  m_LocalPosition: {x: -26.864883, y: -14.087319, z: 1.1243477}
+  m_LocalRotation: {x: -0.49809742, y: 0.07547911, z: 0.0435779, w: 0.8627299}
+  m_LocalPosition: {x: 9.5, y: -37.36, z: -25.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -471,13 +471,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 0.39576283, y: -0, z: -0, w: 0.9183528}
-  m_LocalPosition: {x: 9.9, y: 27.9, z: -38.1}
+  m_LocalRotation: {x: 0.4980974, y: 0.07547913, z: -0.043577895, w: 0.86272997}
+  m_LocalPosition: {x: 9.5, y: 37.5, z: -25.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 46.627003, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 60, y: 10, z: 0}
 --- !u!1 &567483637
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,7 +1401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCanCutTree: 0
-  isCanHaveWater: 1
+  isCanHaveWater: 0
   isCanCleanse: 0
   isCanPlantTree: 0
 --- !u!1 &1974346428
