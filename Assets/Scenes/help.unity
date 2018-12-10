@@ -2160,7 +2160,9 @@ Prefab:
     - target: {fileID: 114848903070698138, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
       propertyPath: m_Text
-      value: Ms. Misaki and Ms. Unity are
+      value: The oil crisis is going a bit further in the future. Along with the development
+        of society, huge amounts of harmful substances have flowed out and the soil
+        is deteriorating. So, Misaki and Unity will solve the situation!
       objectReference: {fileID: 0}
     - target: {fileID: 114848903070698138, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
