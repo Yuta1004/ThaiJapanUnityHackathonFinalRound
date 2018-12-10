@@ -26,6 +26,13 @@ public class SoilAttribute : MonoBehaviour{
     public void PlantTree(int getTreeGrowth){
         isTree = true;
         treeGrowth = getTreeGrowth;
+        if (treeGrowth <= 100){
+            isSeedling = true;
+        }else if (treeGrowth <= 199){
+            isYangeTree = true;
+        }else{
+            isLargeTree = true;
+        }
     }
 
     public void UpdateGrowthPoint(){
@@ -40,23 +47,11 @@ public class SoilAttribute : MonoBehaviour{
             isYangeTree = true;
         }else{
             isLargeTree = true;
-            //Debug.Log("ko");
         }
 	}
 
 	public void PollutionErosion(int degreeOfErosion){
         pollutionLevel = Mathf.Clamp(degreeOfErosion+pollutionLevel, 0, 100);
-    }
-
-    public bool GetBool(int num){
-        if(num == 0){
-            return isSeedling;  
-        }else if(num == 1){
-            return isYangeTree;
-        }else if(num == 2){
-            return isLargeTree;
-        }
-        return false;
     }
 
     public int TreeRank(){
