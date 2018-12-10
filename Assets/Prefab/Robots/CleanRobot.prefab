@@ -95,6 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4385476655829108}
   - component: {fileID: 95647979892603696}
+  - component: {fileID: 114860266860846166}
   m_Layer: 0
   m_Name: CleanRobot
   m_TagString: Untagged
@@ -700,6 +701,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114860266860846166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1163223737683230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f415461f3ce9f4e8d92d6b2b0f4acea2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totralClean: 50
 --- !u!137 &137065799613539904
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

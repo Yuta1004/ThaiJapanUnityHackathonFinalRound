@@ -157,5 +157,17 @@ public class MakeLand : MonoBehaviour {
         OnSoil[index].transform.position = new Vector3(OnSoil[index].transform.position.x,
                                                        OnSoil[index].transform.position.y + 0.5f,
                                                        OnSoil[index].transform.position.z);
+        Soils[index].GetComponent<SoilAttribute>().SetCleaner();
+        OnSoil[index].GetComponent<Cleaning>().ReceiveIndex(index);
     }
+
+    //浄化機を消す
+    public void DestroyCleanre(int index, int clean){
+        Destroy(OnSoil[index].gameObject);
+        Soils[index].GetComponent<SoilAttribute>().PollutionErosion(-clean);
+        UpdateMaterial(index);
+        Soils[index].GetComponent<SoilAttribute>().DestroyCleanre();
+        Debug.Log("消えたよ");
+    }
+
 }

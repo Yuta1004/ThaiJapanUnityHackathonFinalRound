@@ -93,4 +93,8 @@ public class SoilAttribute : MonoBehaviour{
     public void SetCleaner(){
         isCleaner = true;
     }
+
+    public void DestroyCleanre(){
+        isCleaner = false;
+    }
 }
