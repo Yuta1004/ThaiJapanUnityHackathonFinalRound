@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Soil
   - House
+  - Well
   layers:
   - Default
   - TransparentFX
