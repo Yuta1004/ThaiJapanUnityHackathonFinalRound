@@ -42,7 +42,7 @@ public class MakeLand : MonoBehaviour {
                                    initGameObject.transform.rotation);
             Soils[i].transform.parent = this.gameObject.transform;
             Soils[i].AddComponent<SoilAttribute>();
-            Soils[i].GetComponent<SoilAttribute>().init();
+            Soils[i].GetComponent<SoilAttribute>().init(i);
             Soils[i].GetComponent<SoilAttribute>().UpdateGrowthPoint();
             UpdateMaterial(i);
         }
@@ -61,12 +61,13 @@ public class MakeLand : MonoBehaviour {
                 Debug.Log("yes");
                 continue;
             }
-            treeOnSoil[RandomInt[i]] = SetTree(RandomInt[i]);
+            SetTree(RandomInt[i]);
         }
         //汚染開始！！
         StartCoroutine(PollutionSoil());
 	}
 
+    //汚染
     IEnumerator PollutionSoil(){
         
         while (true){
@@ -100,15 +101,14 @@ public class MakeLand : MonoBehaviour {
 	}
 
     //木を植える
-    public GameObject SetTree(int index){
+    public void SetTree(int index){
         
         Soils[index].GetComponent<SoilAttribute>().PlantTree(Random.Range(101, 150));
-        GameObject tree = Instantiate(trees[1], 
+        treeOnSoil[index] = Instantiate(trees[1], 
                                       Soils[index].transform.position, 
                                       Soils[index].transform.rotation);
-        tree.transform.parent = Soils[index].transform;
-        Debug.Log(tree.transform.position);
-        return tree;
+        treeOnSoil[index].transform.parent = Soils[index].transform;
+        return;
     }
 
     public void UpdateTree(int index){
@@ -122,10 +122,8 @@ public class MakeLand : MonoBehaviour {
         }
         Soils[index].GetComponent<SoilAttribute>().UpdateTree();
         int afterTreeRank = Soils[index].GetComponent<SoilAttribute>().TreeRank();
-        Debug.Log(Soils[index].GetComponent<SoilAttribute>().treeGrowth);
         //木の成長度に応じてオブジェクトを入れ替える
         if(beforeTreeRank != afterTreeRank){
-            Debug.Log("hennge!!");
             Destroy(treeOnSoil[index]);
             treeOnSoil[index] = Instantiate(trees[afterTreeRank],
                                       Soils[index].transform.position,

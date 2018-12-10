@@ -12,8 +12,9 @@ public class SoilAttribute : MonoBehaviour{
     private bool isSeedling;
     private bool isYangeTree;
     private bool isLargeTree;
+    private int SoilNumber;
 
-    public void init(){
+    public void init(int index){
         //init attribute
         isTree = false;
         pollutionLevel = Random.Range(0, 50)+20;
@@ -21,6 +22,7 @@ public class SoilAttribute : MonoBehaviour{
         isSeedling = false;
         isYangeTree = false;
         isLargeTree = false;
+        SoilNumber = index;
     }
 
     public void PlantTree(int getTreeGrowth){
