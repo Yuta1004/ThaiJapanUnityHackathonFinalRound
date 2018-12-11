@@ -73,9 +73,12 @@ public class PlayerEvent : MonoBehaviour
                 return;
             }else if(Soil.GetComponent<SoilAttribute>().isTree){
                 return;
+            }else if(HaveElectr <= 0){
+                Debug.Log("電気がないよ");
+                return;
             }
             Soil.gameObject.transform.root.GetComponent<MakeLand>().SetCleaner(index);
-
+            HaveElectr -= 10;
         }
     }
 
