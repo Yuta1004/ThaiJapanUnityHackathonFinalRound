@@ -6,6 +6,7 @@ public class GameOver : MonoBehaviour {
 
     private float CountTime;
     private int Electr;
+    private bool isLoaded = false;
 	// Use this for initialization
 	void Start () {
         CountTime = 0;
@@ -17,8 +18,13 @@ public class GameOver : MonoBehaviour {
         CountTime += Time.deltaTime;
         Debug.Log(CountTime);
         
-        if(CountTime > 60){
+        if(CountTime > 5){
             Electr = this.gameObject.GetComponent<HouseAttribute>().electricQuantity;
+            if(!isLoaded){
+                FadeManager mFadeManager = FadeManager.Instance;
+                mFadeManager.LoadScene("GameOver", 1f);
+                isLoaded = true;
+            }
             Debug.Log("GAMEOVER");
         }
 	}
