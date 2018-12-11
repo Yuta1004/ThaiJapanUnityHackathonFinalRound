@@ -69,6 +69,7 @@ public class PlayerEvent : MonoBehaviour
             return;
         }
         GetTree = Soil.gameObject.transform.root.GetComponent<MakeLand>().CutTree(index);
+        HaveSeedings += Soil.GetComponent<SoilAttribute>().TreeRank();
         IsGetTree = true;
     }
 
