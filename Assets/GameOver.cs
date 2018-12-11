@@ -18,12 +18,13 @@ public class GameOver : MonoBehaviour {
         CountTime += Time.deltaTime;
         Debug.Log(CountTime);
         
-        if(CountTime > 5){
+        if(CountTime > 60){
             Electr = this.gameObject.GetComponent<HouseAttribute>().electricQuantity;
             if(!isLoaded){
                 FadeManager mFadeManager = FadeManager.Instance;
                 mFadeManager.LoadScene("GameOver", 1f);
                 isLoaded = true;
+	            GameoverScript.score = Electr;
             }
             Debug.Log("GAMEOVER");
         }
