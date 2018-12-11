@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.33588368, g: 0.37208953, b: 0.40905994, a: 1}
+  m_IndirectSpecularColor: {r: 0.2418702, g: 0.2886053, b: 0.33964747, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2441,8 +2441,8 @@ Prefab:
     - target: {fileID: 114848903070698138, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
       propertyPath: m_Text
-      value: If you are drawing water, you can also press water by pressing the space
-        key near the seedling.
+      value: If you are drawing water, you can supply water to seedlings by pressing
+        space key when seedlings are nearby.
       objectReference: {fileID: 0}
     - target: {fileID: 224579453754850712, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
@@ -2658,7 +2658,7 @@ Prefab:
     - target: {fileID: 114848903070698138, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
       propertyPath: m_Text
-      value: Player 1 moves Ms.Misaki with the key of computer WASD.
+      value: Player 1 moves Misaki with the key of computer WASD.
       objectReference: {fileID: 0}
     - target: {fileID: 114831657294989470, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
@@ -3343,8 +3343,8 @@ Prefab:
     - target: {fileID: 114848903070698138, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
       propertyPath: m_Text
-      value: Player 2 moves Ms.unity using the arrow keys in the lower right corner
-        of the computer.
+      value: Player 2 moves unity using the arrow keys in the lower right corner of
+        the computer.
       objectReference: {fileID: 0}
     - target: {fileID: 224579453754850712, guid: 002b139d81f884d61996fd91677c563d,
         type: 2}
@@ -3565,7 +3565,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -89}
+  m_AnchoredPosition: {x: 53, y: -94}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1671744118
