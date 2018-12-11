@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CharaController : MonoBehaviour {
 	public string keySetup = "";
-	
+    public float RanSpeed;
+
 	private Animator animator;
 	private bool[] isPressing = {
 		false, false, false, false
@@ -66,7 +67,7 @@ public class CharaController : MonoBehaviour {
 		}
 
 		animator.SetBool("isRunning", flag);
-		if(flag) gameObject.transform.Translate(0, 0, 0.05f);
+        if(flag) gameObject.transform.Translate(0, 0, RanSpeed);
 	}
 	
 	public void OnCallChangeFace(){}

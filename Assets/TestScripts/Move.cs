@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class Move : MonoBehaviour {
 
+    public int player;
     private Rigidbody rb;
-    private Vector3 Axis;
 
     void Start () {
         rb = GetComponent<Rigidbody>();
-        Axis.y = 0;
+        player--;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        Axis.x = Input.GetAxis("Horizontal")*10;
-        Axis.z = Input.GetAxis("Vertical")*10;
-        rb.velocity = Axis;
+        rb.MovePosition(this.gameObject.transform.root.gameObject.transform.GetChild(0).gameObject.transform.position);
 	}
 }
