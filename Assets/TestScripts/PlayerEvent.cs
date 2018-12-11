@@ -111,9 +111,13 @@ public class PlayerEvent : MonoBehaviour
     }
 
     public int passTree(){
+        if(!IsGetTree){
+            return 0;
+        }
         int TotalTree = GetTree;
         GetTree = 0;
         IsGetTree = false;
+        Debug.Log("電気を作ったよ");
         return TotalTree;
     }
 }
