@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class GetPlayerEvent : MonoBehaviour {
 
+    public int player;
+    private KeyCode push;
+	private void Start()
+	{
+        if(player == 1){
+            push = KeyCode.Space;
+        }else if(player == 2){
+            push = KeyCode.Return;
+        }
+	}
 
 	private void OnCollisionStay(Collision collision){
 
         //Event発行
         if(collision.gameObject.tag == "Soil"){
-            if (Input.GetKeyDown(KeyCode.Space)){
+            if (Input.GetKeyDown(push)){
                 this.gameObject.GetComponent<PlayerEvent>().GetSpaceSoil(collision.gameObject);
                 Debug.Log(collision.gameObject.GetComponent<SoilAttribute>().SoilNumber);
             }
@@ -18,7 +28,7 @@ public class GetPlayerEvent : MonoBehaviour {
 
 	private void OnTriggerStay(Collider other){
         
-        if (Input.GetKeyDown(KeyCode.Space)){
+        if (Input.GetKeyDown(push)){
             if (other.gameObject.tag == "House"){
                 if(this.gameObject.GetComponent<PlayerEvent>().isCanCleanse){
                     this.gameObject.GetComponent<PlayerEvent>().
