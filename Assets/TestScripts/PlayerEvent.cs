@@ -34,62 +34,80 @@ public class PlayerEvent : MonoBehaviour
     public void GetSpaceSoil(GameObject Soil){
         int index = Soil.GetComponent<SoilAttribute>().SoilNumber;
         if (isCanPlantTree){
-            if (HaveSeedings == 0){
-                return;
-            }else if (Soil.GetComponent<SoilAttribute>().isCleaner){
-                return;
-            }
-            if (!Soil.GetComponent<SoilAttribute>().isTree){
-                Soil.gameObject.transform.root.GetComponent<MakeLand>().SetTree(index, false);
-                HaveSeedings--;
-            }
+            PlantTree(Soil, index);
         }
-
         if (isCanCutTree){
-            if (!Soil.GetComponent<SoilAttribute>().isTree){
-                return;
-            }else if (IsGetTree){
-                return;
-            }else if (Soil.GetComponent<SoilAttribute>().TreeRank() == 0){
-                return;
-            }
-            GetTree = Soil.gameObject.transform.root.GetComponent<MakeLand>().CutTree(index);
-            IsGetTree = true;
+            CutTree(Soil, index);
         }
 
         if(isCanHaveWater){
-            if(HaveWater <= 0){
-                return;
-            }else if(!Soil.GetComponent<SoilAttribute>().isTree){
-                return;
-            }
-
-            Soil.GetComponent<SoilAttribute>().GetWater(10);
-            HaveWater -= 10;
+            UseWater(Soil, index);
         }
 
         if(isCanCleanse){
-            if(Soil.GetComponent<SoilAttribute>().isCleaner){
-                return;
-            }else if(Soil.GetComponent<SoilAttribute>().isTree){
-                return;
-            }else if(HaveElectr <= 0){
-                Debug.Log("電気がないよ");
-                return;
-            }
-            Soil.gameObject.transform.root.GetComponent<MakeLand>().SetCleaner(index);
-            HaveElectr -= 10;
+            Cleanse(Soil, index);
         }
+    }
+
+    public void PlantTree(GameObject Soil, int index){
+        if (HaveSeedings == 0){
+            return;
+        }else if (Soil.GetComponent<SoilAttribute>().isCleaner){
+            return;
+        }if (!Soil.GetComponent<SoilAttribute>().isTree){
+            Soil.gameObject.transform.root.GetComponent<MakeLand>().SetTree(index, false);
+            HaveSeedings--;
+        }
+    }
+
+    public void CutTree(GameObject Soil, int index){
+        if (!Soil.GetComponent<SoilAttribute>().isTree){
+            return;
+        }else if (IsGetTree){
+            return;
+        }else if (Soil.GetComponent<SoilAttribute>().TreeRank() == 0){
+            return;
+        }
+        GetTree = Soil.gameObject.transform.root.GetComponent<MakeLand>().CutTree(index);
+        IsGetTree = true;
+    }
+
+    public void UseWater(GameObject Soil, int index){
+        if (HaveWater <= 0){
+            Debug.Log("水をあげれない");
+            return;
+        }else if (!Soil.GetComponent<SoilAttribute>().isTree){
+            return;
+        }
+        Soil.GetComponent<SoilAttribute>().GetWater(10);
+        HaveWater -= 10;
+        Debug.Log("水をあげた");
+    }
+
+    public void Cleanse(GameObject Soil, int index){
+        if (Soil.GetComponent<SoilAttribute>().isCleaner){
+            return;
+        }else if (Soil.GetComponent<SoilAttribute>().isTree){
+            return;
+        }else if (HaveElectr <= 0){
+            Debug.Log("電気がないよ");
+            return;
+        }
+        Debug.Log("置けるよ");
+        Soil.gameObject.transform.root.GetComponent<MakeLand>().SetCleaner(index);
+        HaveElectr -= 10;
     }
 
     public void GetSpaceWater(){
         if(isCanHaveWater){
             HaveWater = 100;
+            Debug.Log("水をもらった");
         }
     }
 
     public void GetElectr(GameObject House){
         HaveElectr = House.GetComponent<HouseAttribute>().GiveElectr(HaveElectr);
+        Debug.Log("電気をもらった");
     }
 
     public int passTree(){

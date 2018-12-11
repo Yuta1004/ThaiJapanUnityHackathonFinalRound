@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GetPlayerEvent : MonoBehaviour {
-    
+
+
 	private void OnCollisionStay(Collision collision){
 
         //Event発行
         if(collision.gameObject.tag == "Soil"){
             if (Input.GetKeyDown(KeyCode.Space)){
                 this.gameObject.GetComponent<PlayerEvent>().GetSpaceSoil(collision.gameObject);
+                Debug.Log(collision.gameObject.GetComponent<SoilAttribute>().SoilNumber);
             }
         }
 	}
@@ -29,6 +31,5 @@ public class GetPlayerEvent : MonoBehaviour {
                 this.gameObject.GetComponent<PlayerEvent>().GetSpaceWater();
             }
         }
-		
 	}
 }
