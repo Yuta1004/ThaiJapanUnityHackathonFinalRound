@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.38653344, g: 0.61200833, b: 0.7060411, a: 1}
+  m_IndirectSpecularColor: {r: 0.3769916, g: 0.60006684, b: 0.6919152, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -169,7 +169,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 13be0db72d0ba4cf6969b3a38e56f349, type: 3}
+    m_Font: {fileID: 12800000, guid: 9301241a07ac149c58a2337b640a33da, type: 3}
     m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
@@ -181,7 +181,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 50
-  m_Text: Recovery GIRL
+  m_Text: 'RE: EARTH'
 --- !u!222 &149636354
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -206,7 +206,7 @@ MonoBehaviour:
   delay: 0
   style: 2
   playOnAwake: 1
-  m_progress: 0.3801855
+  m_progress: 0.4688347
   usePosition: 1
   useRotation: 1
   useScale: 0
@@ -222,9 +222,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  characterNumber: 13
-  positionFrom: {x: 0, y: -20, z: 0}
-  positionTo: {x: 0, y: 20, z: 0}
+  characterNumber: 9
+  positionFrom: {x: 0, y: -5, z: 0}
+  positionTo: {x: 0, y: 5, z: 0}
   positionAnimationCurve:
     serializedVersion: 2
     m_Curve:
