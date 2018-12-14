@@ -64,13 +64,11 @@ public class PlayerEvent : MonoBehaviour
     public void CutTree(GameObject Soil, int index){
         if (!Soil.GetComponent<SoilAttribute>().isTree){
             return;
-        }else if (IsGetTree){
-            return;
         }else if (Soil.GetComponent<SoilAttribute>().TreeRank() == 0){
             return;
         }
         int getSeeing = Soil.GetComponent<SoilAttribute>().TreeRank();
-        GetTree = Soil.gameObject.transform.root.GetComponent<MakeLand>().CutTree(index);
+        GetTree += Soil.gameObject.transform.root.GetComponent<MakeLand>().CutTree(index);
         HaveSeedings += getSeeing;
         Debug.Log("total苗木"+HaveSeedings);
         IsGetTree = true;
@@ -105,7 +103,7 @@ public class PlayerEvent : MonoBehaviour
 
     public void GetSpaceWater(){
         if(isCanHaveWater){
-            HaveWater = 100;
+            HaveWater = 1000;
             Debug.Log("水をもらった");
         }
     }
