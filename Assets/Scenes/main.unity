@@ -1660,7 +1660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   electricQuantity: 1000
-  getElectric: 10
+  getElectric: 100
   MaxGive: 100
 --- !u!65 &1336789785
 BoxCollider:
