@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameOver : MonoBehaviour {
 
-    private float CountTime;
+    public float CountTime;
     private int Electr;
     private bool isLoaded = false;
 	// Use this for initialization
@@ -16,7 +16,7 @@ public class GameOver : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         CountTime += Time.deltaTime;
-        Debug.Log(CountTime);
+        //Debug.Log(CountTime);
         
         if(CountTime > 60){
             Electr = this.gameObject.GetComponent<HouseAttribute>().electricQuantity;

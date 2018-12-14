@@ -9,15 +9,15 @@ public class PlayerEvent : MonoBehaviour
     public bool isCanHaveWater;
     public bool isCanCleanse;
     public bool isCanPlantTree;
+    public int HaveWater;
+    public int HaveElectr;
+    public int GetTree;
+    public int HaveSeedings;
 
     private bool IsHaveWater;
     private bool IsGetWater;
-    private int HaveWater;
     private bool IsHaveElectr;
-    private int HaveElectr;
     private bool IsGetTree;
-    private int GetTree;
-    private int HaveSeedings;
 
     // Use this for initialization
     public void Start(){
@@ -68,8 +68,10 @@ public class PlayerEvent : MonoBehaviour
         }else if (Soil.GetComponent<SoilAttribute>().TreeRank() == 0){
             return;
         }
+        int getSeeing = Soil.GetComponent<SoilAttribute>().TreeRank();
         GetTree = Soil.gameObject.transform.root.GetComponent<MakeLand>().CutTree(index);
-        HaveSeedings += Soil.GetComponent<SoilAttribute>().TreeRank();
+        HaveSeedings += getSeeing;
+        Debug.Log("total苗木"+HaveSeedings);
         IsGetTree = true;
     }
 

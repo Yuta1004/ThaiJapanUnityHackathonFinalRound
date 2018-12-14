@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -482,12 +482,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c815989d25b04b08b8f22303c09a4de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text1: {fileID: 1033719091}
-  Text2: {fileID: 1512632734}
-  Text3: {fileID: 1216474898}
-  Text4: {fileID: 1663590110}
-  Text5: {fileID: 2129368937}
-  Text6: {fileID: 0}
+  Electr: {fileID: 1033719091}
+  HaveElectr: {fileID: 1512632734}
+  HaveWater: {fileID: 1663590110}
+  HaveSeeding: {fileID: 1216474898}
+  HaveWood: {fileID: 2129368937}
+  Time: {fileID: 688463797}
+  House: {fileID: 1336789783}
+  Player1: {fileID: 1219985022}
+  Player2: {fileID: 852845948}
 --- !u!4 &383638621
 Transform:
   m_ObjectHideFlags: 0
@@ -1037,7 +1040,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &852845953
 CapsuleCollider:
@@ -1067,6 +1070,10 @@ MonoBehaviour:
   isCanHaveWater: 0
   isCanCleanse: 0
   isCanPlantTree: 1
+  HaveWater: 0
+  HaveElectr: 0
+  GetTree: 0
+  HaveSeedings: 0
 --- !u!114 &852845955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1298,7 +1305,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: HoumElectr
+  m_Text: Electr
 --- !u!222 &1033719092
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1490,7 +1497,7 @@ GameObject:
   - component: {fileID: 1216474899}
   - component: {fileID: 1216474898}
   m_Layer: 5
-  m_Name: HaveWater
+  m_Name: HaveSeeding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1546,7 +1553,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: P2:HaveSeeding
+  m_Text: 'P2:HaveSeeding:'
 --- !u!222 &1216474899
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1590,7 +1597,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &1219985027
 MonoBehaviour:
@@ -1607,6 +1614,10 @@ MonoBehaviour:
   isCanHaveWater: 1
   isCanCleanse: 1
   isCanPlantTree: 0
+  HaveWater: 0
+  HaveElectr: 0
+  GetTree: 0
+  HaveSeedings: 0
 --- !u!114 &1219985028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1691,6 +1702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b91ce799ce25485eb0908265172ffe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CountTime: 0
 --- !u!1 &1346745954
 GameObject:
   m_ObjectHideFlags: 0
@@ -1754,8 +1766,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1346745954}
-  m_LocalRotation: {x: -0.08735558, y: 0.8235076, z: 0.1320534, w: 0.5447625}
-  m_LocalPosition: {x: 49.5411, y: -9.260439, z: 41.837482}
+  m_LocalRotation: {x: -0.3303041, y: 0.6094461, z: 0.30919498, w: 0.6510554}
+  m_LocalPosition: {x: -27.464157, y: -86.647736, z: 22.83731}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1836,7 +1848,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: P1:HaveElectr
+  m_Text: 'P1:HaveElectr:'
 --- !u!222 &1512632735
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1999,7 +2011,7 @@ GameObject:
   - component: {fileID: 1663590111}
   - component: {fileID: 1663590110}
   m_Layer: 5
-  m_Name: HaveSeeding
+  m_Name: HaveWater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2055,7 +2067,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: P1:HaveWater
+  m_Text: 'P1:HaveWater:'
 --- !u!222 &1663590111
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2479,7 +2491,7 @@ GameObject:
   - component: {fileID: 2129368938}
   - component: {fileID: 2129368937}
   m_Layer: 5
-  m_Name: HavWood
+  m_Name: HaveWood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2535,7 +2547,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: P2:HaveWood
+  m_Text: 'P2:HaveWood:'
 --- !u!222 &2129368938
 CanvasRenderer:
   m_ObjectHideFlags: 0
