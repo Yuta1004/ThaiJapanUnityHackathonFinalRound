@@ -33,6 +33,7 @@ public class PlayerEvent : MonoBehaviour
     //スペースを押した時
     public void GetSpaceSoil(GameObject Soil){
         int index = Soil.GetComponent<SoilAttribute>().SoilNumber;
+
         if (isCanPlantTree){
             PlantTree(Soil, index);
         }
@@ -84,6 +85,7 @@ public class PlayerEvent : MonoBehaviour
         }
         Soil.GetComponent<SoilAttribute>().GetWater(10);
         HaveWater -= 10;
+        Soil.gameObject.transform.root.GetComponent<MakeLand>().UpdateTree(index);
         Debug.Log("水をあげた");
     }
 
