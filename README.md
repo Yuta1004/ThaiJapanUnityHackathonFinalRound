@@ -1,7 +1,7 @@
-# T-J Game Unity Hackathon ~Final Round~
+# T-J Game Unity Hackathon \~Final Round\~
  タイ日Unityゲームハッカソン2018 ~FinalRound~で作成した作品です
 
-- タイトル 
+- タイトル   
 **Re: Earth**
 
 - 結果  
