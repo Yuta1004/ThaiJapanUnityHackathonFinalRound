@@ -13,6 +13,12 @@ public class PlayerEvent : MonoBehaviour
     public int HaveElectr;
     public int GetTree;
     public int HaveSeedings;
+    public bool SoundCutWood;
+    public bool SoundCleanUp;
+    public bool SoundGiveWater;
+    public bool SoundReceiveWater;
+    public bool SoundPlant;
+    public bool SoundGeneration;
 
     private bool IsHaveWater;
     private bool IsGetWater;
@@ -28,6 +34,12 @@ public class PlayerEvent : MonoBehaviour
         HaveWater = 50;
         HaveElectr = 0;
         HaveSeedings = 3;
+        SoundCutWood = false;
+        SoundCleanUp = false;
+        SoundGiveWater = false;
+        SoundReceiveWater = false;
+        SoundPlant = false;
+        SoundGeneration = false;
     }
 
     //スペースを押した時
@@ -58,6 +70,7 @@ public class PlayerEvent : MonoBehaviour
         }if (!Soil.GetComponent<SoilAttribute>().isTree){
             Soil.gameObject.transform.root.GetComponent<MakeLand>().SetTree(index, false);
             HaveSeedings--;
+            SoundPlant = true;
         }
     }
 
@@ -72,6 +85,7 @@ public class PlayerEvent : MonoBehaviour
         HaveSeedings += getSeeing;
         Debug.Log("total苗木"+HaveSeedings);
         IsGetTree = true;
+        SoundCutWood = true;
     }
 
     public void UseWater(GameObject Soil, int index){
@@ -85,6 +99,7 @@ public class PlayerEvent : MonoBehaviour
         HaveWater -= 10;
         Soil.gameObject.transform.root.GetComponent<MakeLand>().UpdateTree(index);
         Debug.Log("水をあげた");
+        SoundGiveWater = true;
     }
 
     public void Cleanse(GameObject Soil, int index){
@@ -99,12 +114,14 @@ public class PlayerEvent : MonoBehaviour
         Debug.Log("置けるよ");
         Soil.gameObject.transform.root.GetComponent<MakeLand>().SetCleaner(index);
         HaveElectr -= 10;
+        SoundCleanUp = true;
     }
 
     public void GetSpaceWater(){
         if(isCanHaveWater){
             HaveWater = 1000;
             Debug.Log("水をもらった");
+            SoundReceiveWater = true;
         }
     }
 
@@ -121,6 +138,7 @@ public class PlayerEvent : MonoBehaviour
         GetTree = 0;
         IsGetTree = false;
         Debug.Log("電気を作ったよ");
+        SoundGeneration = true;
         return TotalTree;
     }
 }
